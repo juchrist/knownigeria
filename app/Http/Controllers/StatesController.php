@@ -4,17 +4,19 @@ namespace App\Http\Controllers;
 
 use App\Models\States;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 use App\Http\Resources\KnownigeriaResource;
 
 class StatesController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function allStates()
     {
         //
         $states = States::all();
@@ -24,48 +26,47 @@ class StatesController extends Controller
             'message' => 'Retrieved successfully'], 200);    
         }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Knownigeria  $knownigeria
+     * @param  \App\Models\States  $state
      * @return \Illuminate\Http\Response
      */
-    public function show(Knownigeria $knownigeria)
+    public function showState(States $state)
     {
-        //
+
+        return response([
+            'state' => new KnownigeriaResource($state), 
+            'message' => 'Retrieved successfully'], 200);
+
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Knownigeria  $knownigeria
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Knownigeria $knownigeria)
-    {
-        //
-    }
+
 
     /**
-     * Remove the specified resource from storage.
+     * Display the specified resource.
      *
-     * @param  \App\Models\Knownigeria  $knownigeria
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Knownigeria $knownigeria)
+    public function stateByCode($code)
     {
-        //
+
+        $data = DB::table('states')->where('state_code', $code)->first();
+        if($data){
+         $response = response([
+            'state' => $data, 
+            'message' => 'Retrieved successfully'], 200);
+
+        }else{
+        $response =    response([
+                'message' => 'State not found!'], 404);    
+        }
+
+        return $response;
+
     }
+
+
 }
