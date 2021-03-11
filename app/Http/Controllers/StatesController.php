@@ -12,7 +12,7 @@ class StatesController extends Controller
 {
 
     /**
-     * Display a listing of the resource.
+     * Display a listing of all the 36 States.
      *
      * @return \Illuminate\Http\Response
      */
@@ -29,7 +29,7 @@ class StatesController extends Controller
 
 
     /**
-     * Display the specified resource.
+     * Display the specified State.
      *
      * @param  \App\Models\States  $state
      * @return \Illuminate\Http\Response
@@ -46,7 +46,7 @@ class StatesController extends Controller
 
 
     /**
-     * Display the specified resource.
+     * Display the specified State by State Code.
      *
      * @return \Illuminate\Http\Response
      */

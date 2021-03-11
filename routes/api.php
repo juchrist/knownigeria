@@ -29,7 +29,7 @@ Route::get('v1/states/{state}', [StatesController::class, 'showState']);
 Route::get('v1/states/code/{code}', [StatesController::class, 'stateByCode']);
 
 
-Route::get('v1/governors', [GovernorsController::class, 'index']);
+Route::get('v1/governors', [GovernorsController::class, 'allGovernors']);
 Route::get('v1/states/{state}/governor', [GovernorsController::class, 'stateGovernor']);
 
 

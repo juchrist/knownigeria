@@ -11,7 +11,7 @@ use App\Http\Resources\KnownigeriaResource;
 class LgasController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of Local Governments Areas.
      *
      * @return \Illuminate\Http\Response
      */
@@ -27,7 +27,13 @@ class LgasController extends Controller
 
 
 
-    public function showLga($state)
+    /**
+     * Display a Particular Local Governments Area.
+     *
+     * @return \Illuminate\Http\Response
+     */
+
+     public function showLga($state)
      {
     
         $data = DB::table('local_governments')->where('id',$state)->first();
@@ -49,7 +55,13 @@ class LgasController extends Controller
     }
 
 
-        public function stateLgas($state)
+    /**
+     * Display a listing of Local Governme nts Areas for a specified State.
+     *
+     * @return \Illuminate\Http\Response
+     */
+
+     public function stateLgas($state)
         {
     
             $data = DB::table('local_governments')->where('state_id',$state)->get();
@@ -70,26 +82,5 @@ class LgasController extends Controller
     
         }
 
-        /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Knownigeria  $knownigeria
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Knownigeria $knownigeria)
-    {
-        //
-    }
 
 }

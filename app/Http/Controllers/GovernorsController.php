@@ -12,11 +12,12 @@ use App\Http\Resources\KnownigeriaResource;
 class GovernorsController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the 36 State Governors.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+
+     public function allGovernors()
     {
         //
         $governor = Governor::all();
@@ -28,11 +29,12 @@ class GovernorsController extends Controller
 
 
     /**
-     * Display the specified resource.
+     * Display the specified State Governor.
      *
      * @return \Illuminate\Http\Response
      */
-    public function stateGovernor($state)
+
+     public function stateGovernor($state)
     {
 
         $data = DB::table('states')->where('id', $state)->first();
@@ -56,50 +58,4 @@ class GovernorsController extends Controller
 
 
 
-
-
-        /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Knownigeria  $knownigeria
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Knownigeria $knownigeria)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Knownigeria  $knownigeria
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Knownigeria $knownigeria)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Knownigeria  $knownigeria
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Knownigeria $knownigeria)
-    {
-        //
-    }
 }
