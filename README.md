@@ -12,9 +12,9 @@ Know Nigeria API is an Open Source that provides you with necessary information 
 |  Get all states at once  | https://myknapi.herokuapp.com/api/v1/states  |
 | Get Individual States Information | http://myknapi.herokuapp.com/api/v1/states/{state_id} |
 | Get  all Local Governements | http://myknapi.herokuapp.com/api/v1/lgas |
-|  Get all Local Governements in a State  | http://myknapi.herokuapp.com/api/v1/state/state_id/lgas |
-| Get data for a specific Local Governement | http://myknapi.herokuapp.com/api/v1/lgas/state_id |
-| Get data for a Governor in Nigeria | http://myknapi.herokuapp.com/api/v1/state/state_id/governor  |
+|  Get all Local Governements in a State  | http://myknapi.herokuapp.com/api/v1/state/{state_id}/lgas |
+| Get data for a specific Local Governement | http://myknapi.herokuapp.com/api/v1/lgas/{state_id} |
+| Get data for a Governor in Nigeria | http://myknapi.herokuapp.com/api/v1/state/{state_id}/governor  |
 
 
 ### Response Codes
